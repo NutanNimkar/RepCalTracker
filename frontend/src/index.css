@@ -1,18 +1,24 @@
 /* google font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
 
 /* layout */
 :root {
   --primary: #1aac83;
+  --dark: #333; 
   --error: #e7195a;
 }
 body {
-  background: #f1f1f1;
+  background: #f4fae9; /* Light pink background for the body */
   margin: 0;
   font-family: "Poppins";
 }
+
 header {
-  background: #fff;
+  background: #4dd5f3fe; /* Teal background for the header */
 }
 header .container {
   max-width: 1400px;
@@ -22,6 +28,23 @@ header .container {
   align-items: center;
   justify-content: space-between;
 }
+
+.title {
+  display: flex;
+  gap: 20px; /* Adjust the space between titles */
+  align-items: center; /* Center vertically within the container */
+}
+
+.title h1 {
+  color: #ffffff; /* Text color for the titles */
+  transition: color 0.3s; /* Smooth transition for text color change */
+
+  /* Hover effect */
+  &:hover {
+    color: #FFA7B7; /* Change the text color on hover */
+  }
+}
+
 header a {
   color: #333;
   text-decoration: none;
@@ -39,17 +62,18 @@ header a {
   gap: 100px;
 }
 .workout-details {
-  background: #fff;
+  background: #6be3fdc8; /* Teal background for the card, matching the header */
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  color: #FFFFFF; /* White text color for the card, ensuring good contrast */
 }
 .workout-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
-  color: var(--primary);
+  color: #555;
 }
 .workout-details p {
   margin: 0;
@@ -67,28 +91,78 @@ header a {
   color: #333;
 }
 
+/* food details */
+.foodItem-details {
+  background: #fff;
+  border-radius: 4px;
+  margin: 40px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+.foodItem-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--primary);
+}
+.foodItem-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+.foodItem-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+}
+
+
 /* new workout form */
 label, input {
   display: block;
 }
+/* Cool input field */
+/* Green input field */
 input {
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 20px;
   width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 1px solid #3B823D; /* Green border color */
+  border-radius: 8px; /* Rounded corners for a softer look */
   box-sizing: border-box;
+  background: #ecf8ea; /* Light green background color */
+  color: #333; /* Text color */
+  font-family: "Poppins";
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions for border and box-shadow */
+
+  /* Add a subtle box-shadow for cool effect */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+
+/* Green button */
 form button {
-  background: var(--primary);
+  background: #18bc1e; /* Dark green background color */
   border: 0;
   color: #fff;
   padding: 10px;
   font-family: "Poppins";
-  border-radius: 4px;
+  border-radius: 8px; /* Rounded corners for a softer look */
   cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for background color */
+
+  /* Add a hover effect for the button */
+  &:hover {
+    background: #006717; /* Change the background color to a lighter green on hover */
+  }
 }
+
+
 div.error {
   padding: 10px;
   background: #ffefef;
@@ -99,4 +173,94 @@ div.error {
 }
 input.error {
   border: 1px solid var(--error);
+}
+button{
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  margin-right: 20px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.my-custom-paragraph {
+  font-weight: normal; /* Reset font-weight to normal */
+  font-size: normal;     /* Reset font-size to 16px */
+  color: #333;      /* Inherit text color from parent */
+}
+
+table {
+  border: 2px solid forestgreen;
+  width: 800px;
+  height: 200px;
+}
+
+td {
+  text-align: center;
+}
+
+span.material-symbols-outlined {
+  color: white; /* Text color for the delete icon */
+  background: #89bafa; /* Light pink background color for a subtle and soft look */
+  padding: 5px 10px; /* Padding for the delete icon to create some space */
+  border-radius: 4px; /* Add rounded corners */
+  cursor: pointer; /* Add a pointer cursor to indicate interactivity */
+  transition: background-color 0.3s; /* Smooth transition for background color change */
+
+  /* Hover effect */
+  &:hover {
+    background: #FFA7B7; /* Change the background color on hover */
+  }
+}
+
+.create-food {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center; /* Center text within the form */
+}
+
+.create-food h3 {
+  margin: 0 0 20px; /* Add spacing to the heading */
+}
+
+.create-food label {
+  margin-top: 10px;
+}
+
+.create-food input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Rounded corners for a softer look */
+  box-sizing: border-box;
+  background: #C9E9C6; /* Light green background color */
+  color: #333; /* Text color */
+  font-family: "Poppins";
+  transition: border-color 0.3s, box-shadow 0.3s;
+
+  /* Add a subtle box-shadow for a cool effect */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.create-food button {
+  background: #3B823D; /* Dark green background color */
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  /* Add a hover effect for the button */
+  &:hover {
+    background: #006717; /* Change the background color to a lighter green on hover */
+  }
 }

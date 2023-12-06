@@ -31,7 +31,7 @@ function FoodItemForm() {
         const json = await response.data
         console.log(json)
 
-        if(response.status != 200) {
+        if(response.status !== 200) {
             setError(json.error)
             setEmptyFields(json.emptyFields)
         }
@@ -46,7 +46,7 @@ function FoodItemForm() {
     }
     
   return (
-    <form className='create' onSubmit={handleSubmit}>
+    <form className='create-food' onSubmit={handleSubmit}>
         <h3> Add a Food Item</h3>
 
         <label> Food Name</label>

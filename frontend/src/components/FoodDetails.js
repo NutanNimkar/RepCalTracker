@@ -15,9 +15,9 @@ const FoodItemDetails = ({ foodItem }) => {
     }
   }
   return (
-    <div className='workout-details'> 
+    <div className='foodItem-details'> 
         <h4>{foodItem.name}</h4>
-        <p><strong> Amount </strong>{foodItem.amount}</p>
+        <p><strong> Amount : </strong>{foodItem.amount}</p>
         <p>{formatDistanceToNow(new Date(foodItem.createdAt), { addSuffix: true})}</p>
         <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
     </div>

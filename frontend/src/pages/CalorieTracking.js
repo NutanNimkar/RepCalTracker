@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useFoodItemsContext } from '../hooks/useFoodItem'
-import FoodItemForm from '../components/FoodForm'
 import FoodItemDetails from '../components/FoodDetails'
 import axios from 'axios'
+import FoodLookup from '../components/FoodLookUp'
 
 function CalorieTracking() {
 
@@ -21,14 +21,16 @@ function CalorieTracking() {
     fetchFoodItems()
 }, [dispatch])
   return (
-    <div className='home'>
-        <div className='workouts'>
-            {foodItems && foodItems.map((foodItem) => (
-                <FoodItemDetails key={foodItem._id} foodItem={foodItem}/>
-            ))}
-        </div>
-        <FoodItemForm />
+<div className='home'>
+  <div className='workouts'>
+    {foodItems && foodItems.map((foodItem) => (
+      <FoodItemDetails key={foodItem._id} foodItem={foodItem}/>
+    ))}
+    <div className="mb-0">
+      <FoodLookup />
     </div>
+  </div>
+</div>
   )
 }
 
