@@ -1,3 +1,3 @@
-# Rep-Cal-Repo
+# RepCalTracker
 An exercise and nutrition recording app. 
 Tracking exercises and macro lookup.
